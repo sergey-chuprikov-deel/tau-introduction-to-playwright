@@ -11,7 +11,7 @@ require('dotenv').config();
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  // testDir: './tests',
+  testDir: './tests',
 
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -77,39 +77,39 @@ export default defineConfig({
       },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
-    {
-      name: 'all-browsers-and-tests',
-      use: { 
-        baseURL: 'https://playwright.dev/',
-         ...devices['Desktop Chrome']
-      },
-    },
+    // {
+    //   name: 'all-browsers-and-tests',
+    //   use: { 
+    //     baseURL: 'https://playwright.dev/',
+    //      ...devices['Desktop Chrome']
+    //   },
+    // },
 
-    {
-      name: 'all-browsers-and-tests',
-      use: { 
-        baseURL: 'https://playwright.dev/',
-         ...devices['Desktop Safari']
-      },
-    },
+    // {
+    //   name: 'all-browsers-and-tests',
+    //   use: { 
+    //     baseURL: 'https://playwright.dev/',
+    //      ...devices['Desktop Safari']
+    //   },
+    // },
 
-    {
-      name: 'all-browsers-and-tests',
-      use: { 
-        baseURL: 'https://playwright.dev/',
-         ...devices['Desktop Firefox']
-      },
-    },
+    // {
+    //   name: 'all-browsers-and-tests',
+    //   use: { 
+    //     baseURL: 'https://playwright.dev/',
+    //      ...devices['Desktop Firefox']
+    //   },
+    // },
 
     // Example only
     {
@@ -119,19 +119,19 @@ export default defineConfig({
       },
     },
 
-    // Example only
-    {
-      name: 'ci',
-      use: { 
-         baseURL: process.env.CI
-          ? baseEnvUrl.ci.prefix + process.env.GITHUB_REF_NAME + baseEnvUrl.ci.suffix //https://dev-myapp-chapter-2.mydomain.com
-          : baseEnvUrl.staging.home,
-      },
-      /**
-       * GitHub variables: https://docs.github.com/en/actions/learn-github-actions/variables
-       * GitLab variables: https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables-reference
-       */
-    },
+    // // Example only
+    // {
+    //   name: 'ci',
+    //   use: { 
+    //      baseURL: process.env.CI
+    //       ? baseEnvUrl.ci.prefix + process.env.GITHUB_REF_NAME + baseEnvUrl.ci.suffix //https://dev-myapp-chapter-2.mydomain.com
+    //       : baseEnvUrl.staging.home,
+    //   },
+    //   /**
+    //    * GitHub variables: https://docs.github.com/en/actions/learn-github-actions/variables
+    //    * GitLab variables: https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables-reference
+    //    */
+    // },
 
     /* Test against mobile viewports. */
     // {
