@@ -112,12 +112,12 @@ export default defineConfig({
     // },
 
     // Example only
-    {
-      name: 'local',
-      use: { 
-        baseURL: baseEnvUrl.local.home,
-      },
-    },
+    // {
+    //   name: 'local',
+    //   use: { 
+    //     baseURL: baseEnvUrl.local.home,
+    //   },
+    // },
 
     // // Example only
     // {
