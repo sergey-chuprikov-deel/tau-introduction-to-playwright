@@ -283,7 +283,7 @@ test.describe('Clear completed button', () => {
     await createDefaultTodos(page);
   });
 
-  test.only('@smoke - should display the correct text', async ({ page }) => {
+  test('@smoke - should display the correct text', async ({ page }) => {
     await page.locator('.todo-list li .toggle').first().check();
     await expect(page.getByRole('button', { name: 'Clear completed' })).toBeVisible();
   });
