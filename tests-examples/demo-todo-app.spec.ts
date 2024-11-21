@@ -37,7 +37,7 @@ test.describe('New Todo', () => {
     await checkNumberOfTodosInLocalStorage(page, 2);
   });
 
-  test('should clear text input field when an item is added', async ({ page }) => {
+  test('@qwerty should clear text input field when an item is added', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
 
@@ -198,12 +198,12 @@ test.describe('@smoke - Editing', () => {
   });
 
   test('should hide other controls when editing', async ({ page }) => {
-    // const todoItem = page.getByTestId('todo-item').nth(1);
-    const todoItem = page.getByTestId('todo-item'); // intentionally changed here to fail the test
+    const todoItem = page.getByTestId('todo-item').nth(1);
+    // const todoItem = page.getByTestId('todo-item'); // intentionally changed here to fail the test
     await todoItem.dblclick();
     await expect(todoItem.getByRole('checkbox')).not.toBeVisible();
     await expect(todoItem.locator('label', {
-      hasText: TODO_ITEMS[1],
+      hasText: TODO_ITEMS[0],
     })).not.toBeVisible();
     await checkNumberOfTodosInLocalStorage(page, 3);
   });
